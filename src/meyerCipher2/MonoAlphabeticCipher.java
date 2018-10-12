@@ -12,14 +12,9 @@ public class MonoAlphabeticCipher implements Cipher{
 		return this.secretAlphabet;
 	}
 	
-	protected void setSecretAlphabet(String sAlphabet) {
-		try {
-			this.secretAlphabet = testSecret(sAlphabet);
-			
-			
-		}catch(ExceptionsMeyer e) {
-			System.out.println(e.toString());
-		}
+	protected void setSecretAlphabet(String sAlphabet) throws ExceptionsMeyer {
+			this.secretAlphabet = testSecret(sAlphabet); 
+		
 	}
 	@Override
 	public String encrypt(String text) {
