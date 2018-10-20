@@ -2,7 +2,7 @@ package meyerCipher2;
 
 public class Test {
 	public static void main(String[]args) {
-		try {
+		 /*try {
 			SubstitutionCipher s1 = new SubstitutionCipher("qwertzuiopüyxcvbnmasdfghjklöäß");
 			
 			System.out.print("encrypt:\t");
@@ -29,5 +29,7 @@ public class Test {
 		}catch(ExceptionsMeyer y) {
 			System.out.println(y.toString());
 		}
+		**/
+		CipherController c = new CipherController();
 	}
 }
