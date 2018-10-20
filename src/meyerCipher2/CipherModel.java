@@ -5,35 +5,31 @@ public class CipherModel {
 	private SubstitutionCipher su1;
 	private ShiftCipher sh1;
 	private int which;
-	private String error;
+	
 	
 	public CipherModel() {
 		this.which = 1;
 		this.output = "N.A.";
 		
 		try {
-			this.su1 = new SubstitutionCipher("abcdefghijklmnopqrstuvwxyz");
+			this.su1 = new SubstitutionCipher("abcdefghijklmnopqrstuvwxyzäöüß");
 			this.sh1 = new ShiftCipher(0);
 		}catch(ExceptionsMeyer e) {
 			
 		}
 	}
 	public void setSubCipher(String alpha) throws ExceptionsMeyer {
-		try {
+
 			this.su1.setSecretAlphabet(alpha);
-			this.error = "";
-		}catch(ExceptionsMeyer e) {
-			this.error = e.toString();
-		}
 	}
 	
-	public void setShiftCipher(int value) {
+	public void setShiftCipher(int value)  {
 		try {
 			this.sh1.setShiftValue(value);
-			this.error = "";
 		}catch(ExceptionsMeyer e) {
-			this.error = e.toString();
+			
 		}
+			
 	}
 	
 	public void setEncryptText(String t) {
@@ -55,16 +51,13 @@ public class CipherModel {
 			break;
 		default: 
 			break;
-	}
+		}
 	}
 	
 	public String getOutput() {
 		return this.output;
 	}
 	
-	public String getError() {
-		return this.error;
-	}
 	
 	public void setWhich(int i) {
 		this.which = i;
